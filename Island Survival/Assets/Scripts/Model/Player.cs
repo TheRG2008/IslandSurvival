@@ -8,7 +8,7 @@ public class Player : GridObject
     private int _lifes;
     private int _coin;
     private int _atackPower;
-
+    private Enemy _enemy;
     public int Lifes
     {
         get => _lifes;
@@ -51,7 +51,7 @@ public class Player : GridObject
     {
         if (SearchEnemy())
         {
-            GetDamage();
+            GetDamage(_enemy);
         }
     }
     public void Die()
@@ -67,7 +67,7 @@ public class Player : GridObject
     }
     public void EnterHome ()
     {
-        //
+        
     }
 
     public void FindingWay()
@@ -81,6 +81,7 @@ public class Player : GridObject
 
     public bool SearchEnemy() // Поменял void на bool для того что бы вернуть, есть враг или нет
     {
+        
         return true;
 
     }

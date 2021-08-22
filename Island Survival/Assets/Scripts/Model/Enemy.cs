@@ -19,9 +19,9 @@ public class Enemy : Player
     {
     }
 
-    public void FindResourse(GridObjectType gridObjectType)
+    public void FindResourse()
     {
-
+       
     }
 }
 
