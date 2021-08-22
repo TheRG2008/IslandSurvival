@@ -49,11 +49,17 @@ public class Player : GridObject
     }
     public void Atack()
     {
-
+        if (SearchEnemy())
+        {
+            GetDamage();
+        }
     }
     public void Die()
     {
-
+        if (_lifes <= 0)
+        {
+            
+        }
     }
     public void Respawn()
     {
@@ -61,20 +67,21 @@ public class Player : GridObject
     }
     public void EnterHome ()
     {
-
+        //
     }
 
     public void FindingWay()
     {
 
     }
-    public void GetDamage()
+    public void GetDamage(Enemy enemy)
     {
-
+        enemy.LifesEnemy -= _atackPower;
     }
 
-    public void SearchEnemy()
+    public bool SearchEnemy() // Поменял void на bool для того что бы вернуть, есть враг или нет
     {
+        return true;
 
     }
 
