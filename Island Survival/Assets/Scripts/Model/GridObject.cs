@@ -5,37 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public enum GridObjectType //GridObject это по факту и есть Objects with Resourse, как в этом случае поступить
-                           //Реализовать через enum как тут, или создать наследников от GridObject с разными типами объектов?
-{
-    Tree,
-    Stoun,
-    Bush,
-    IronMine,
-    SilverMine
-}
+
 public abstract class GridObject
 {
     protected int _x;
     protected int _y;
     protected Grid _gridCurrent;
-    protected int _layer;
-
-
+    
     public int X
         => _x;
     public int Y
         => _y;
-    public int Layer
-        => _layer;
-
-
+    
     protected GridObject(GridObjectSetting setting)
     {        
         _x = setting.X;
         _y = setting.Y;
         _gridCurrent = setting.Grid;
-        _layer = setting.Layer;
+        
     }
 
     protected bool _Move (int x, int y)
@@ -51,20 +38,31 @@ public abstract class GridObject
         }
         return false;
     }
+    protected abstract void OnUpdate(); //Реализация Update в GridObject
+
+    public void Update()
+    {
+        OnUpdate();
+        _Move(_x,_y);
+    }
+
+
 }
 public struct GridObjectSetting
 {
     public int X;
     public int Y;
     public Grid Grid;
-    public int Layer;
+    
 
-    public GridObjectSetting(int x, int y, Grid grid, int layer)
+    public GridObjectSetting(int x, int y, Grid grid)
     {
         X = x;
         Y = y;
         Grid = grid;
-        Layer = layer;
+       
     }
+
+    
 }
 

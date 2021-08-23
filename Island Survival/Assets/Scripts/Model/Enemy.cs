@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-public class Enemy : Player
+public class Enemy : Entity
 {
     private int _enemyHP;
-    private Resurses[] _resurses;
+    private List<BaseResourse> _resourse = new List<BaseResourse>();
     private List<GridObject> _gridObjects;
      
     public int LifesEnemy
@@ -22,6 +22,16 @@ public class Enemy : Player
     public void FindResourse()
     {
        
+    }
+
+    protected override void OnDie()
+    {
+        
+    }
+
+    protected override void OnUpdate()
+    {
+        
     }
 }
 

@@ -34,4 +34,17 @@ public class Grid
     {
         return _gridCell[x, y];
     }
+
+    public void DestroyGridObject(GridObject gridObject)
+    {
+        _gridObjects.Remove(gridObject);
+    }
+
+    public void Update ()
+    {
+        for (int i = 0; i < _gridObjects.Count; i++)
+        {
+            _gridObjects[i].Update();
+        }
+    }
 }
