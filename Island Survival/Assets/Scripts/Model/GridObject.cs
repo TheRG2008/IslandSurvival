@@ -43,7 +43,7 @@ public abstract class GridObject
     public void Update()
     {
         OnUpdate();
-        _Move(_x,_y);
+        
     }
 
 

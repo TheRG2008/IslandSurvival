@@ -26,12 +26,13 @@ public class Enemy : Entity
 
     protected override void OnDie()
     {
-        
+        Die(); //
     }
 
     protected override void OnUpdate()
     {
-        
+        Update();
+        OnDie(); //
     }
 }
 

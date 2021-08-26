@@ -101,7 +101,6 @@ public abstract class Entity : GridObject
         enemy = null;
         return false;
 
-
     }
 
 
