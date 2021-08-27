@@ -23,16 +23,32 @@ public class Enemy : Entity
     {
        
     }
+    public void CollectResourse()
+    {
+
+    }
+    public void EnterHome()
+    {
+
+    }
+    public void FindingWay()
+    {
+
+    }
 
     protected override void OnDie()
     {
         Die(); //
     }
 
+
     protected override void OnUpdate()
     {
         Update();
         OnDie(); //
     }
+    //Atack();
+    //GetDamage();
+    //SearchEnemy();
 }
 

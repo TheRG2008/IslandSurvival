@@ -45,8 +45,6 @@ public abstract class GridObject
         OnUpdate();
         
     }
-
-
 }
 public struct GridObjectSetting
 {

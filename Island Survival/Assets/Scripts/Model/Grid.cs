@@ -37,7 +37,7 @@ public class Grid
 
     public void DestroyGridObject(GridObject gridObject)
     {
-        _gridObjects.Remove(gridObject);
+        _gridObjects.Remove(gridObject);        
     }
 
     public void Update ()

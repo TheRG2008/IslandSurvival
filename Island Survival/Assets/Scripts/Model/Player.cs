@@ -16,6 +16,7 @@ public class Player : Entity
     public Player(GridObjectSetting setting) : base(setting)
     {
     }
+   
 
    
     public void Atack()
@@ -25,19 +26,24 @@ public class Player : Entity
             enemy.GetDamage(_atackPower, this);
         }
     }
-    public void Die()
-    {
-        
-    }
     
-    public void EnterHome ()
+    
+    public void EnterHome (GridObject chosenObject, PlayerHome home) //
     {
-        
+        if (chosenObject == home)
+        {
+            home.RestoringLives();
+        }
     }
 
-    public void FindingWay()
+    public bool FindingWay(GridCell gridCell) //
     {
-
+        if (gridCell.IsPassable == true)
+        {
+            return true;
+        }
+        else
+            return false;
     }
     
 
@@ -48,12 +54,15 @@ public class Player : Entity
 
     protected override void OnDie()
     {
-        
+        Die();
     }
 
     protected override void OnUpdate()
     {
         
     }
+    //Move()
+    //GetDamage
+    //SearchEnemy
 }
 
