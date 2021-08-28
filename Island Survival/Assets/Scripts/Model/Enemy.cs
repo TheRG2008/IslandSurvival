@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public class Enemy : Entity
 {
     private int _enemyHP;
-    private List<BaseResourse> _resourse = new List<BaseResourse>();
+    private List<Resource> _resourse = new List<Resource>();
     private List<GridObject> _gridObjects;
      
     public int LifesEnemy
@@ -29,7 +29,7 @@ public class Enemy : Entity
     }
     public void EnterHome()
     {
-
+        _gridCurrent.DestroyGridObject(this);
     }
     public void FindingWay()
     {
@@ -37,18 +37,24 @@ public class Enemy : Entity
     }
 
     protected override void OnDie()
-    {
-        Die(); //
+    {        
     }
 
 
     protected override void OnUpdate()
     {
-        Update();
-        OnDie(); //
     }
-    //Atack();
-    //GetDamage();
-    //SearchEnemy();
+
+    public void Atack ()
+    {
+        if (SearchEnemy(out Entity entity))
+        {
+            if (entity is Player player)
+                player.GetDamage(_atackPower, this);
+
+        }
+    }
+    
+    
 }
 

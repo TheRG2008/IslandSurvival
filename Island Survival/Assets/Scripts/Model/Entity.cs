@@ -64,7 +64,7 @@ public abstract class Entity : GridObject
         Lifes -= damage;
     }
 
-    public virtual bool SearchEnemy(out Enemy enemy)
+    public virtual bool SearchEnemy(out Entity enemy)
     {
         if (_gridCurrent.FindObject(_x - 1, _y, out GridObject result1))
         {

@@ -7,6 +7,7 @@ public class Grid
     private int _width;
     private int _height;
     private List<GridObject> _gridObjects = new List<GridObject>();
+    
 
     public int Width
         => _width;
@@ -38,6 +39,14 @@ public class Grid
     public void DestroyGridObject(GridObject gridObject)
     {
         _gridObjects.Remove(gridObject);        
+    }
+    public bool CreateGridObject(GridObject gridObject)
+    {
+        if (FindObject(gridObject.X, gridObject.Y, out GridObject Object))
+            return false;
+
+        _gridObjects.Add(gridObject);
+        return true;
     }
 
     public void Update ()

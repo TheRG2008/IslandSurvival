@@ -8,26 +8,32 @@ using System.Threading.Tasks;
 public class Fence : Entity
 {
     private int _lvl;
-    private List<BaseResourse> _resourseForUpgrade = new List<BaseResourse>();
+    
+    private Resource[] _resourseForUpgrade;
+    public int Lvl => _lvl;
     public Fence(GridObjectSetting setting) : base(setting)
     {
     }
 
     protected override void OnDie()
     {
+
     }
 
     protected override void OnUpdate()
     {
     }
 
-    public void Upgrade()
+    public void Upgrade(Inventory inventory)
     {
+        //проверка на колличество ресурсов
+        //удалить ресурсы - проверка
+        _lvl += 1;
 
     }
-    public void Destroy()
+    public void Destroy() 
     {
-
+        _gridCurrent.DestroyGridObject(this); 
     }
 
 }

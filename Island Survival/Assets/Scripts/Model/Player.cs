@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 public class Player : Entity
 {    
     private int _coin;
+    private int _maxLife;
+    public Direction direction;
     public int Coin
     {
         get => _coin;
         set => _coin = value;
     }
-   
-    
+    public int MaxLife 
+    {   
+        get => _maxLife; 
+        set => _maxLife = value;
+    }
+
     public Player(GridObjectSetting setting) : base(setting)
     {
     }
@@ -21,9 +27,11 @@ public class Player : Entity
    
     public void Atack()
     {
-        if (SearchEnemy(out Enemy enemy))
+        if (SearchEnemy(out Entity entity))
         {
+            if(entity is Enemy enemy)
             enemy.GetDamage(_atackPower, this);
+            
         }
     }
     
@@ -32,20 +40,19 @@ public class Player : Entity
     {
         if (chosenObject == home)
         {
-            home.RestoringLives();
+            home.RestoringLives(this); //
         }
+    }
+    public void Click(int x, int y)
+    {
+
     }
 
-    public bool FindingWay(GridCell gridCell) //
-    {
-        if (gridCell.IsPassable == true)
-        {
-            return true;
-        }
-        else
-            return false;
-    }
-    
+    public bool FindingWay(GridCell gridCell) 
+        => gridCell.IsPassable;
+
+
+
 
     public void CollectResurce()
     {
@@ -57,12 +64,15 @@ public class Player : Entity
         Die();
     }
 
-    protected override void OnUpdate()
+    protected override void OnUpdate() 
     {
         
+        Move(direction);
+        direction = Direction.None;
+        SearchEnemy(out Entity entity);
+
     }
-    //Move()
-    //GetDamage
-    //SearchEnemy
+    
+    
 }
 

@@ -38,7 +38,7 @@ public abstract class GridObject
         }
         return false;
     }
-    protected abstract void OnUpdate(); //Реализация Update в GridObject
+    protected abstract void OnUpdate(); 
 
     public void Update()
     {

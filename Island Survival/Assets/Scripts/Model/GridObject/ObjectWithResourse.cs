@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 public class ObjectWithResourse : Entity
 {
     private int _lvl;
-    private List<BaseResourse> _resourse = new List<BaseResourse>();
+    private List<Resource> _resourse;
     private float _recoveryTime;
     private bool _isActive;
 
@@ -20,10 +20,9 @@ public class ObjectWithResourse : Entity
         set => _isActive = value;
     }
 
-    
-
     public ObjectWithResourse(GridObjectSetting setting) : base(setting)
     {
+        _resourse = new List<Resource>();
     }
 
     protected override void OnDie()

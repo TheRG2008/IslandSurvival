@@ -19,9 +19,9 @@ public class PlayerHome : Entity
     {
     }
 
-    public void RestoringLives()
+    public void RestoringLives(Player player) //
     {
-
+        Lifes = player.MaxLife;
     }
 
 
