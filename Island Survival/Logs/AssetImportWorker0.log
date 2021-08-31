@@ -3588,3 +3588,73 @@ Total: 1.913800 ms (FindLiveObjects: 0.198100 ms CreateObjectMapping: 0.061200 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001056 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.567 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1828 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.8 MB.
+System memory in use after: 89.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2724.
+Total: 1.939200 ms (FindLiveObjects: 0.207400 ms CreateObjectMapping: 0.070000 ms MarkObjects: 1.548900 ms  DeleteObjects: 0.111900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000761 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.499 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1828 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.8 MB.
+System memory in use after: 89.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2728.
+Total: 1.848300 ms (FindLiveObjects: 0.184500 ms CreateObjectMapping: 0.064200 ms MarkObjects: 1.510400 ms  DeleteObjects: 0.088500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 1021469.222546 seconds.
+  path: Assets/Scripts/Model/Resipes
+  artifactKey: Guid(3836c3de9bc16db4b9550f507b6a1f9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Model/Resipes using Guid(3836c3de9bc16db4b9550f507b6a1f9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81614a0c4f0ccf42c34341029b9fdadf') in 0.057064 seconds
+  Import took 0.158068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.227193 seconds.
+  path: Assets/Scripts/Model/GridObject
+  artifactKey: Guid(34f59636d477a3a47b4a705c7a05b34a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Model/GridObject using Guid(34f59636d477a3a47b4a705c7a05b34a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbd6b257efca9f35fe38ccf8557496a7') in 0.002151 seconds
+  Import took 0.164723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.881666 seconds.
+  path: Assets/Scripts/Model/GridObject/Enemies
+  artifactKey: Guid(8d10a67494241654e96b93c7d7ea2231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Model/GridObject/Enemies using Guid(8d10a67494241654e96b93c7d7ea2231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f6302a5f451ba09cd391e42cba8caea') in 0.002078 seconds
+  Import took 0.027445 seconds .
+

@@ -13,6 +13,7 @@ public class Fence : Entity
     public int Lvl => _lvl;
     public Fence(GridObjectSetting setting) : base(setting)
     {
+        
     }
 
     protected override void OnDie()
@@ -26,10 +27,23 @@ public class Fence : Entity
 
     public void Upgrade(Inventory inventory)
     {
-        //проверка на колличество ресурсов
-        //удалить ресурсы - проверка
-        _lvl += 1;
 
+        
+        switch (_lvl)
+        {
+            case 0:
+                if (inventory.CheckResource(new Resource(20, TypeOfResources.Wood), new Resource(5, TypeOfResources.Rock)))
+                {
+                    inventory.RemoveResource(new Resource(20, TypeOfResources.Wood), new Resource(5, TypeOfResources.Rock));
+                    _lvl++;
+                }
+                break;
+            case 1:
+                // Добавить еще одно условие
+                break;
+
+        }
+    
     }
     public void Destroy() 
     {

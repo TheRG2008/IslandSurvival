@@ -12,11 +12,11 @@ public struct Resource
     public readonly int Price;
     public readonly TypeOfResources Type;
 
-    public Resource(int count, int price, TypeOfResources type)
+    public Resource(int count, TypeOfResources type)
     {
-        Count = count;
-        Price = price;
+        Count = count;      
         Type = type;
+        Price = (int)type;
     }
 }
 
