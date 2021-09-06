@@ -37,7 +37,7 @@ public class EnemyHome : Entity
                 _gridCurrent.CreateGridObject(new Skeleton(new GridObjectSetting(X, Y+1, _gridCurrent)));
                 break;
             case EnemyType.Orc:
-
+                _gridCurrent.CreateGridObject(new Ork(new GridObjectSetting(X, Y + 1, _gridCurrent)));
                 break;
             
         }

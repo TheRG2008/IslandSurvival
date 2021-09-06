@@ -11,6 +11,8 @@ public abstract class GridObject
     protected int _x;
     protected int _y;
     protected Grid _gridCurrent;
+    public uint ID { get; }
+    
     
     public int X
         => _x;
@@ -22,7 +24,7 @@ public abstract class GridObject
         _x = setting.X;
         _y = setting.Y;
         _gridCurrent = setting.Grid;
-        
+        ID = _gridCurrent.NextID;
     }
 
     protected bool _Move (int x, int y)
@@ -38,12 +40,13 @@ public abstract class GridObject
         }
         return false;
     }
-    protected abstract void OnUpdate(); 
+    protected abstract void OnUpdate();
+
+    public abstract uint GetUniqueID();
 
     public void Update()
     {
         OnUpdate();
-        
     }
 }
 public struct GridObjectSetting

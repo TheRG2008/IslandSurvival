@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 public class Enemy : Entity
 {
-    private int _enemyHP;
+    
     private List<Resource> _resourse = new List<Resource>();
     private List<GridObject> _gridObjects;
      
-    public int LifesEnemy
-    {
-        get => _enemyHP;
-        set => _enemyHP = value;
-    }
-
     public Enemy(GridObjectSetting setting) : base(setting)
     {
     }
@@ -27,9 +22,14 @@ public class Enemy : Entity
     {
 
     }
-    public void EnterHome()
+    public void EnterHome(GridObject gridObject) //
     {
-        _gridCurrent.DestroyGridObject(this);
+        if (gridObject is EnemyHome enemyHome )
+        {
+            if (_gridCurrent.FindObject(X, Y - 1, out gridObject))
+                _gridCurrent.DestroyGridObject(this);
+        }
+            
     }
     public void FindingWay()
     {

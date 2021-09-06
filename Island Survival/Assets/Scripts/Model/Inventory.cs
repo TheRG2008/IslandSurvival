@@ -10,12 +10,12 @@ public class Inventory
     private Resource[] _resources;
     private List<Item> _items;
     private int _maxResourseCount;
-    
 
-    public Inventory ()
+
+    public Inventory()
     {
         _maxResourseCount = 99;
-        _items = new List<Item>();       
+        _items = new List<Item>();
         _resources = new Resource[Enum.GetNames(typeof(TypeOfResources)).Length];
         Array array = Enum.GetValues(typeof(TypeOfResources));
         for (int i = 0; i < _resources.Length; i++)
@@ -24,29 +24,32 @@ public class Inventory
         }
     }
 
-    public void AddResource (Resource resource)
-    {
-        for (int i = 0; i < _resources.Length; i++)
-        {
-            if (_resources[i].Type == resource.Type)
-            {
-                _resources[i].Count += resource.Count;
-                if (_resources[i].Count > _maxResourseCount)
-                {
-                    _resources[i].Count = _maxResourseCount;
-                    return;
-                }
-            }
-
-        }
-    }
-    public bool CheckResource (params Resource[] resources)
+    public void AddResource(params Resource[] resources)
     {
         for (int i = 0; i < resources.Length; i++)
         {
             for (int j = 0; j < _resources.Length; j++)
             {
-                if (_resources[i].Type == resources[j].Type)
+                if (resources[i].Type == _resources[j].Type)
+                {
+                    _resources[i].Count += resources[j].Count;
+
+                    if (_resources[i].Count > _maxResourseCount)
+                    {
+                        _resources[i].Count = _maxResourseCount;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    public bool CheckResource(params Resource[] resources)
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            for (int j = 0; j < _resources.Length; j++)
+            {
+                if (resources[i].Type == _resources[j].Type)
                 {
                     if (!(_resources[i].Count >= resources[j].Count))
                     {
@@ -54,22 +57,25 @@ public class Inventory
                     }
                 }
             }
-            
+
         }
         return true;
 
     }
-    public void RemoveResource( Resource resource)
+    public void RemoveResource(params Resource[] resources)
     {
-        for (int i = 0; i < _resources.Length; i++)
+        for (int i = 0; i < resources.Length; i++)
         {
-            if (_resources[i].Type == resource.Type)
+            for (int j = 0; i < _resources.Length; j++)
             {
-                _resources[i].Count -= resource.Count;
-               
+                if (resources[i].Type == _resources[j].Type)
+                {
+                    _resources[i].Count -= resources[j].Count;
+                    if (_resources[i].Count < 0)
+                        _resources[i].Count = 0;
+                }
             }
-
         }
     }
-    
+} 
 

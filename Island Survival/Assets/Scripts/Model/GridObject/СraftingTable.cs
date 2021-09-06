@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class СraftingTable : Entity
+public class СraftingTable : GridObject
 {
     private List<Resipes> _createResipes;
     private List<Resipes> _upgrateResipes;
@@ -17,9 +17,7 @@ public class СraftingTable : Entity
         _upgrateResipes = upgrateResipes;
     }
 
-    protected override void OnDie()
-    {
-    }
+   
     protected override void OnUpdate()
     {
     }
