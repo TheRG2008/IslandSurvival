@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-public class EnemyHome : Entity
+public class EnemyHome : GridObject
 {
     private float _spawnTimer; 
     private Random rand;
@@ -20,9 +20,7 @@ public class EnemyHome : Entity
         rand = new Random();
     }
 
-    protected override void OnDie()
-    {   
-    }
+    
 
     protected override void OnUpdate()
     {        
@@ -43,6 +41,10 @@ public class EnemyHome : Entity
         }
 
     }
-   
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.EnemyHome;
+    }
 }
 

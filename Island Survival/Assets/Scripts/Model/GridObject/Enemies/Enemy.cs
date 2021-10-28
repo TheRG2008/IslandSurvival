@@ -54,7 +54,10 @@ public class Enemy : Entity
 
         }
     }
-    
-    
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.Enemy;
+    }
 }
 

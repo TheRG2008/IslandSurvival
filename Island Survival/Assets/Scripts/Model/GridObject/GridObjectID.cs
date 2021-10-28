@@ -1,5 +1,13 @@
 ﻿public enum GridObjectID : uint
 {
     Fence,
-    Ork
+    Ork,
+    Chest,
+    Enemy,
+    EnemyHome,
+    Npc,
+    ObjectWithResurce,
+    Player,
+    PlayerHome,
+    CraftingTable
 }

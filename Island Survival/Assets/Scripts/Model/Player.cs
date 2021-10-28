@@ -72,7 +72,10 @@ public class Player : Entity
         SearchEnemy(out Entity entity);
 
     }
-    
-    
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.Player;
+    }
 }
 

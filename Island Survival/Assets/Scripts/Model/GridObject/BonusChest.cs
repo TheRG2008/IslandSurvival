@@ -30,6 +30,12 @@ public class BonusChest : Entity
         return result;
        
     }
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.Chest;
+    }
+
     protected override void OnDie()
     {
         

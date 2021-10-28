@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class ObjectWithResourse : Entity
+public class ObjectWithResourse : GridObject
 {
     private int _lvl;
     private List<Resource> _resourse;
@@ -25,12 +25,15 @@ public class ObjectWithResourse : Entity
         _resourse = new List<Resource>();
     }
 
-    protected override void OnDie()
-    {       
-    }
+    
 
     protected override void OnUpdate()
     {        
+    }
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.ObjectWithResurce;
     }
 }
 

@@ -16,6 +16,11 @@ public class Npc : GridObject
         
     }
 
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.Npc;
+    }
+
     protected override void OnUpdate()
     {
         

@@ -53,7 +53,10 @@ public class СraftingTable : GridObject
     {
         return _createResipes.ToArray();
     }
-    
-    
+
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.CraftingTable;
+    }
 }
 

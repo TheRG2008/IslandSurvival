@@ -24,6 +24,9 @@ public class PlayerHome : Entity
         Lifes = player.MaxLife;
     }
 
-
+    public override uint GetUniqueID()
+    {
+        return (uint)GridObjectID.PlayerHome;
+    }
 }
 
